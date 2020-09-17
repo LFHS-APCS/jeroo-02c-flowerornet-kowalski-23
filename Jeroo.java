@@ -10,8 +10,38 @@ public class Jeroo extends JerooBase {
      *  No side effects and no errors.
      */
     public boolean isFlowerOrNetNearInFront() {
+      if (!isWater(AHEAD))
+        hop();
+      else
         return false;
+      if (isFlower(AHEAD)) {
+	      this.turn(LEFT);
+	      this.turn(LEFT);
+	      this.hop();
+	      this.turn(LEFT);
+	      this.turn(LEFT);
+	      return true;
+	      }
+      else if (isNet(AHEAD)) {
+	      this.turn(LEFT);
+	      this.turn(LEFT);
+	      this.hop();
+	      this.turn(LEFT);
+	      this.turn(LEFT);
+	      return true;
+      }
+      else {
+	      this.turn(LEFT);
+	      this.turn(LEFT);
+	      this.hop();
+	      this.turn(LEFT);
+	      this.turn(LEFT);
+	      return false;
+      }
     }
+
+
+
 
     // Do NOT touch the code below here
     public Jeroo() {super();}
